@@ -8,7 +8,7 @@ def main(userUrl):
         if not firebase_admin._apps:
             cred = credentials.Certificate(
                 'ub-hackathon-2023-firebase-adminsdk-7l4y4-d2367ecf0b.json')
-            firebase_admin.initialize_app(cred, name="FLASK_APP", options={
+            firebase_admin.initialize_app(cred, options={
                 'databaseURL': 'https://ub-hackathon-2023.firebaseio.com/'
             })
         ref = db.reference("/")
