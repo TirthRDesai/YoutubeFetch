@@ -11,11 +11,11 @@ def main(userUrl):
             firebase_admin.initialize_app(cred, options={
                 'databaseURL': 'https://ub-hackathon-2023.firebaseio.com/'
             })
-        ref = db.reference("/")
+
+        ref = db.reference("/data")
         ref.set({
-            'data': {
-                'url': str(userUrl)
-            }
-        })
+                'url': str(userUrl),
+                'comments': ""
+                })
     except Exception as e:
         print(e)
