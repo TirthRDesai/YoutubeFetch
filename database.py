@@ -13,6 +13,7 @@ def main(userUrl):
             })
 
         ref = db.reference("/")
+        print(ref.get())
         ref.set({
             "data": {
                 'url': str(userUrl),
