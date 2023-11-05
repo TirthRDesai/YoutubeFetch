@@ -16,7 +16,7 @@ def url():
     if request.method == "GET":
         userUrl = request.args
     else:
-        userUrl = request.form
+        userUrl = request.json
     print(len(userUrl))
     # return render_template("setUrl.html", userUrl=userUrl)
     return jsonify({'response': userUrl})
