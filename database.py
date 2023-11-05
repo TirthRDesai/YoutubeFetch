@@ -18,9 +18,9 @@ def main(userUrl):
         firebase_admin.initialize_app(cred, {
             'databaseURL': 'https://ub-hackathon-2023.firebaseio.com/'
         })
-    ref = db.reference("/data")
-    ref.delete()
-    ref = db.reference('/data/'+str(userUrl))
+    ref = db.reference()
     ref.set({
-        'url': str(userUrl)
+        'data': {
+            'url': userUrl
+        }
     })
