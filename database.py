@@ -17,6 +17,7 @@ else:
 
 def main(userUrl):
     try:
+        print(firebase_admin._apps)
         ref = db.reference("/")
         print(ref.get())
         ref.set({
