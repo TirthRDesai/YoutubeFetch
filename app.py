@@ -20,3 +20,7 @@ def url():
     print(len(userUrl))
     # return render_template("setUrl.html", userUrl=userUrl)
     return jsonify({'response': userUrl})
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
