@@ -18,5 +18,5 @@ def url():
     else:
         userUrl = request.form
     print(len(userUrl))
-    return render_template("setUrl.html", userUrl=userUrl)
-    # return jsonify({'response': userUrl})
+    # return render_template("setUrl.html", userUrl=userUrl)
+    return jsonify({'response': userUrl})
