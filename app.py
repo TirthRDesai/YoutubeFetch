@@ -17,8 +17,7 @@ def url():
     if request.method == "GET":
         userUrl = request.args
     else:
-        userUrl = request.json
-    print(userUrl)
+        userUrl = request.json["url"]
     database.main(userUrl)
     return jsonify({'response': 'success'})
 
