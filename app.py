@@ -17,9 +17,7 @@ def url():
         userUrl = request.args
     else:
         userUrl = request.json
-    print(len(userUrl))
-    # return render_template("setUrl.html", userUrl=userUrl)
-    return jsonify({'response': userUrl})
+    return render_template("setUrl.html", userUrl=userUrl)
 
 
 if __name__ == "__main__":
