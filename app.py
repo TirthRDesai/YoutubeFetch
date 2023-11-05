@@ -1,6 +1,5 @@
 
 from flask import Flask, render_template, request, jsonify
-from flask_sslify import SSLify
 
 app = Flask(__name__)
 sslify = SSLify(app, permanent=True)
@@ -19,5 +18,4 @@ def url():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="10.84.33.200",
-            ssl_context=('C:\\Program Files\\OpenSSL-Win64\\bin\\cert.pem', 'C:\\Program Files\\OpenSSL-Win64\\bin\\privkey.pem'))
+    app.run(debug=True, host="10.84.33.200")
