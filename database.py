@@ -12,10 +12,11 @@ def main(userUrl):
                 'databaseURL': 'https://ub-hackathon-2023.firebaseio.com/'
             })
 
-        ref = db.reference("/data")
+        ref = db.reference("/")
         ref.set({
+            "data": {
                 'url': str(userUrl),
                 'comments': ""
-                })
+            }})
     except Exception as e:
         print(e)
