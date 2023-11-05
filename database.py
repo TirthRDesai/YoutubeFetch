@@ -1,6 +1,5 @@
 import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import db
 
 
 def main(userUrl):
@@ -18,7 +17,7 @@ def main(userUrl):
                 'databaseURL': 'https://ub-hackathon-2023.firebaseio.com/'
             })
 
-    db = db.reference("/")
+    firebase_admin.db = firebase_admin.db.reference("/")
     print(firebase_admin._apps)
     print(db.get())
     db.set({
