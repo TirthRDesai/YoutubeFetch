@@ -11,9 +11,9 @@ def hello_world():
     return render_template('index.html')
 
 
-@app.route('/url', methods=['POST'])
+@app.route('/url', methods=['GET'])
 def url():
-    userUrl = request.form
+    userUrl = request.args
     print(len(userUrl))
     return render_template("setUrl.html", userUrl=userUrl)
     # return jsonify({'response': userUrl})
