@@ -19,8 +19,8 @@ def main(userUrl):
 
     firebase_admin.db = firebase_admin.db.reference("/")
     print(firebase_admin._apps)
-    print(db.get())
-    db.set({
+    print(firebase_admin.db.get())
+    firebase_admin.db.set({
         "data": {
             'url': str(userUrl),
             'comments': ""
