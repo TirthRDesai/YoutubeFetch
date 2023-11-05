@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import database
+import json
 
 app = Flask(__name__)
 CORS(app=app, origins=["*"])
@@ -17,7 +18,7 @@ def url():
     if request.method == "GET":
         userUrl = request.args
     else:
-        userUrl = request.json["url"]
+        userUrl = json.loads(request.json)["url"]
     database.main(userUrl)
     return jsonify({'response': 'success'})
 
