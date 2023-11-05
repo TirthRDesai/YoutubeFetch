@@ -17,18 +17,7 @@ def main(userUrl):
         firebase_admin.initialize_app(cred, name="DBPY", options={
             'databaseURL': 'https://ub-hackathon-2023-default-rtdb.firebaseio.com'
         })
-    db_ref = db.reference("/"+str(userUrl))
+    db_ref = db.reference("/")
 
-    if db_ref.get() == None:
-        data = {
-            "url": userUrl,
-            "comment": ""
-        }
-        db_ref.child("url").set(str(userUrl))
-        db_ref.child("comment").set("")
-    else:
-        data = {
-            "url": userUrl,
-            "comment": ""
-        }
-        db_ref.update(data)
+    db_ref.child("url").set(str(userUrl))
+    db_ref.child("comment").set("")
