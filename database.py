@@ -16,7 +16,7 @@ def main(userUrl):
 
     # As an admin, the app has access to read and write all data, regradless of Security Rules
     ref = db.reference("/")
-    ref.delete()
+    ref.set(None)
     ref = db.reference('/'+str(userUrl))
     ref.set({
         'url': str(userUrl)
