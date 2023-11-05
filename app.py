@@ -15,5 +15,5 @@ def hello_world():
 def url():
     userUrl = request.form['url']
     print(userUrl)
-    # return render_template("setUrl.html", userUrl=userUrl)
-    return jsonify({'response': userUrl})
+    return render_template("setUrl.html", userUrl=userUrl)
+    # return jsonify({'response': userUrl})
