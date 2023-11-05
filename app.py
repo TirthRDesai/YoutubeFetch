@@ -14,7 +14,3 @@ def url():
     userUrl = request.form['url']
     return render_template("setUrl.html", userUrl=userUrl)
     # return jsonify({'response': 'success'})
-
-
-if __name__ == '__main__':
-    app.run()
