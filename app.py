@@ -21,6 +21,7 @@ def url():
         userUrl = request.json
 
     userUrl = userUrl["userUrl"]
+    print(userUrl)
     database.main(userUrl)
 
     return jsonify({'response': 'success'})
